@@ -1,0 +1,67 @@
+//最大公约数和最小公倍数
+//输入两个正整数m和n，(n>0,m>o)求其最大公约数和最小公倍数。
+
+#include <stdio.h>
+
+int main()
+{
+
+
+    int a,b,c,j,k;
+    int min(int x,int y);
+    int max(int x,int y);
+    printf("Please input two numbers:\n");
+    scanf("%d,%d",&a,&b);
+    printf("Output:\n");
+    if (a<=0||b<=0)
+    {
+        printf("Input error!\n");
+    }
+    else
+    {
+        for(k=min(a,b);k>0;k--)
+        {
+            if(a%k==0&&b%k==0)
+            {
+                printf("最大公约数为:%d\n",k);
+                break;
+            }
+
+        }
+
+        for(j=max(a,b);;j++)
+        {
+            if(j%a==0&&j%b==0)
+            {
+                printf("最小公倍数为:%d\n",j);
+                break;
+            }
+        }
+
+
+    }
+
+    return 0;
+}
+int min(int x,int y)  /*取最大值*/
+{
+    if(x>=y)
+    {
+        return y;
+    }
+
+    else
+    {
+        return x;
+    }
+
+
+}
+int max(int x,int y)/*取最小值*/
+{
+    if(x>=y)
+        return x;
+    else
+        return y;
+
+}
