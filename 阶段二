@@ -1,0 +1,23 @@
+//[题号:431][出题人:liang008]
+//从键盘上输入两个实数，计算这两个实数的商（梁琦审核）
+//编写程序实现以下功能
+//从键盘上输入两个双精度浮点数，计算这两个数的商，并取小数点后两位（只计算前面的数除以后面的数）,输出的素材为printf("Input 2 numbers: ")，printf("Divide by zero.\n")，printf("The result is: ***\n");
+//程序的运行效果应类似地如图1和图2所示，图1中的12 2.5和图2中的89.3 0是从键盘输入的内容。
+
+#include"stdio.h"
+int main()
+{
+    double a,b;
+    printf("Input 2 numbers: ");
+    scanf("%lf%lf",&a,&b);
+    printf("Output:\n");
+    if(b==0)
+    {
+        printf("Divide by zero.\n");
+    }
+    else
+    {
+        printf("The result is: %.2f.\n",a/b);
+    }
+    return 0;
+}
