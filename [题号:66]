@@ -1,0 +1,34 @@
+
+//求表达式
+//求下式的值：
+//输入格式
+// 输入a，b，c的值（注：它们的范围在0~1000000之间，注意溢出和精度问题）
+//输出
+//题目描述中算式的值，并保留4位小数。
+//请注意行尾输出换行。
+
+#include <stdio.h>
+
+int main()
+{
+
+	double E1=0;
+	int a,b,c;
+	printf("Please input the a,b,c: ");
+	scanf("%d%d%d",&a,&b,&c);
+	for(int x=1;x<=a;x++)
+	{
+		E1+=x;
+	}
+	for(int x=1;x<=b;x++)
+	{
+		E1+=(double)x*x;
+	}
+	for(int x=1;x<=c;x++)
+	{
+		E1+=1.0/x;
+	}
+	printf("Output:The ans is: %.4lf\n",E1);
+
+    	return 0;
+}
