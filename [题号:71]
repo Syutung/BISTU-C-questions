@@ -12,8 +12,8 @@
 int main()
 {
 
-	double E1=0;
-	int h,b,c;
+
+	int h;
 	printf("please input h: ");
 	scanf("%d",&h);
 	printf("Output:\n");
