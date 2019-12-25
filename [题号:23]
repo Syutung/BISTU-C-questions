@@ -1,0 +1,48 @@
+//[题号:23][出题人:jiangyuru]
+//根据输入的n(约定n>0)在屏幕上用@显示对应的X图案（焦健审核）
+//根据输入的n(约定n>0)在屏幕上显示对应的图案（图案最后一个@右侧是'\n'，不能有其他不可显示的字符；图案最后一个@左侧除了@符号，其余都是空格符号）。程序的运行效果应类似地如图1和图2所示，图1中的3和图2中的5是从键盘输入的内容。（可以直接从此复制@符号）
+
+#include <stdio.h>
+int main()
+{
+    int n,p;
+    printf("Please input n:");
+    scanf("%d",&n);
+    printf("Output:\n");
+    for (int i=0;i<n;i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            printf(" ");
+        }
+        if (i==n-1)
+        {
+            printf("@\n");
+        }
+        else
+        {
+            printf("@");
+            for (int j = 0; j < 2*(n-i-1)-1; j++)
+            {
+                printf(" ");
+            }
+            printf("@\n");
+        }
+    }
+
+    for (int i=0;i<n-1;i++)
+    {
+        for (int k = n-i-2; k >0 ; k--)
+        {
+            printf(" ");
+        }
+        printf("@");
+        for (int j = 0; j < 2*(i+1)-1;j++)
+        {
+            printf(" ");
+        }
+            printf("@\n");
+
+    }
+
+}
