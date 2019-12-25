@@ -1,0 +1,32 @@
+//题目描述
+//有一个函数： 
+//        -1           x<0
+//
+//f(x)=0             x=0
+//
+ //        1            x>0
+//
+//给定x值，输出对应的y值。
+//输入格式
+//一个整数x。 
+//输出
+//输出x值对应的y值。
+//请注意行尾输出换行
+
+#include"stdio.h"
+int main()
+{
+    int x;
+    printf("Input x: ");
+    scanf("%d",&x);
+    printf("Output : \n");
+    
+      if( x<0)
+          printf("y=-1 \n");
+      else if(x==0)
+        printf("y=0 \n");
+        else
+        printf("y=1 \n");
+    
+    return 0;
+}
