@@ -1,0 +1,59 @@
+//题目描述
+//Kitty发现她的围墙有一块坏了，是一块长方形的部分（面积是1×L）（单位英尺），幸运的是Kitty从邻居家借来了几块板子和锯子，这些板子的形状也是长方形，而且所有的板子宽度都是1英尺，这样Kitty就可以通过对这些板子的修剪组装（当然如果刚好适合就不用修剪了）补好那个缺口。
+//现在Kitty知道这些板子的长度，然后她想用最少的原材料来修补缺口，你能帮帮她吗？
+//输入格式
+//依次输入缺口的长度L (0<L<1000000000)、借来的板子数目N(0<=N<600)以及每块板子的长度Ai(0<Ai<1000000000 )
+//输出
+//运行程序后等到最少需要的板子数目
+//如果这些板子不够，请输出"impossible" 
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int cmp(const void* a,const void* b)  //从大到小
+{
+    return *(int *)b - *(int *)a;
+}
+
+int main()
+{
+    int L,N,i,j,count,k;
+    int ss[700];
+	printf("Please input the length of crack:");
+	scanf("%d",&L);
+	printf("Please input the number of blocks:");
+	scanf("%d",&N);
+    while((L&&N)!=EOF)
+    {
+		printf("Please input the length of blocks:");
+        for(i=0;i<N;i++)
+        {
+            scanf("%d",&ss[i]);
+        }
+        qsort(ss,N,sizeof(ss[0]),cmp);
+        count=0;k=0;j=0;
+            for(i=0;i<N;i++)
+            {
+                if(ss[i]+k < L)
+                {
+                    k+=ss[i];
+                    count++;
+                }
+                else
+                {
+                    count++;
+                    j=1;
+					printf("Output:\n");
+                    printf("%d\n",count);
+                    break;
+                }
+            }
+            if(j==0)
+			{
+				printf("Output:\n");
+				printf("impossible\n");
+			}
+			break;
+    }
+    return 0;
+}
