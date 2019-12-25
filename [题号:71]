@@ -1,0 +1,39 @@
+//输出梯形
+//题目描述
+//输入一个高度h，输出一个高为h，上底边为h的用“*”表示的梯形图形。
+//输入格式
+//一个整数h(1<=h<=100)。
+//输出
+//h所对应的“*”梯形。（注：每一行之间相差2个"*"）
+
+
+#include <stdio.h>
+
+int main()
+{
+
+	double E1=0;
+	int h,b,c;
+	printf("please input h: ");
+	scanf("%d",&h);
+	printf("Output:\n");
+	for(int x=0;x<h;x++)
+	{
+		
+		for(int j=0;j<(h-x-1)*2;j++)
+		{
+			printf(" ");
+		}
+		for(int j=1;j<=h+x*2;j++)
+		{
+			printf("*");
+
+			if(j==h+x*2)
+			{
+				printf("\n");
+			}
+		}
+	}
+
+    	return 0;
+}
